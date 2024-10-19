@@ -1,1 +1,25 @@
+<html>
+    <body>
+        <script>
+            var sum = 0; 
+            var i = 1;   
+            var totalNumbers = parseInt(prompt("¿Cuántos números desea sumar?")); 
 
+            if (totalNumbers <= 0) {
+                console.log("Por favor, ingrese un número positivo.");
+            } else {
+                while (i <= totalNumbers) {
+                    var number = parseInt(prompt("Ingrese el número " + i + ":")); 
+                    sum += number; 
+                    i++; 
+                }
+
+                var promedio = sum / totalNumbers;
+
+               
+                console.log("Sumatoria: " + sum);
+                console.log("Promedio: " + promedio);
+            }
+        </script>
+    </body>
+</html>
