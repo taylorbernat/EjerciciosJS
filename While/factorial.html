@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calcular Factorial</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f39595;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+        .container {
+            border: 3px solid #ff0d0d;
+            background-color: rgb(243, 72, 72);
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            text-align: center;
+        }
+        h1 {
+            color: #000000;
+            margin-bottom: 20px;
+        }
+        input {
+            padding: 10px;
+            width: 80%;
+            margin: 10px 0;
+            border: 3px solid #ff0d0d;
+            border-radius: 5px;
+        }
+        button {
+            padding: 10px 20px;
+            background-color: #ff0000;
+            color: rgb(0, 0, 0);
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+        button:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <h1>Calcular Factorial</h1>
+        <input type="number" id="numero" placeholder="Introduce un número entero positivo">
+        <br>
+        <button onclick="calcularFactorial()">Calcular Factorial</button>
+    </div>
+
+    <script>
+        function calcularFactorial() {
+            let numero = parseInt(document.getElementById('numero').value);
+            let factorial = 1;
+            let i = numero;
+
+            if (isNaN(numero) || numero < 0) {
+                console.error('Por favor, introduce un número entero positivo.');
+                return;
+            }
+
+            while (i > 1) {
+                factorial *= i;
+                i--;
+            }
+
+            console.log(`El factorial de ${numero} es: ${factorial}`);
+        }
+    </script>
+</body>
+</html>

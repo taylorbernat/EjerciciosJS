@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Imprimir Números en la Consola</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #9cf890;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+        .container {
+            border: 3px solid #000000;
+            background-color: #5ae737;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            text-align: center;
+        }
+        h1 {
+            color: #333;
+            margin-bottom: 20px;
+        }
+        input {
+            padding: 10px;
+            width: 80%;
+            border: 3px solid #000000;
+            border-radius: 5px;
+            margin-bottom: 20px;
+            cursor: cell;
+        }
+        button {
+            padding: 10px 20px;
+            background-color: #28a745;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+        button:hover {
+            background-color: #218838;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <h1>Imprimir Números en la Consola</h1>
+        <input type="number" id="numero" placeholder="Introduce un número entero positivo">
+        <br>
+        <button onclick="imprimirNumeros()">Imprimir Números</button>
+    </div>
+
+    <script>
+        function imprimirNumeros() {
+            let numero = parseInt(document.getElementById('numero').value);
+            let i = 0;
+
+            if (isNaN(numero) || numero < 0) {
+                console.error('Por favor, introduce un número entero positivo o igual a cero.');
+                return;
+            }
+
+            while (i <= numero) {
+                console.log(i);
+                i++;
+            }
+        }
+    </script>
+</body>
+</html>

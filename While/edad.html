@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mostrar Años Cumplidos</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #e2eec1;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+        .container {
+            background-color: rgb(206, 218, 52);
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            width: 300px;
+        }
+        h1 {
+            color: #333;
+            margin-bottom: 20px;
+        }
+        input {
+            padding: 10px;
+            width: 80%;
+            margin: 10px 0;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            cursor: auto;
+        }
+        button {
+            padding: 10px 20px;
+            background-color: #37df03;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+        button:hover {
+            background-color: #15ff00;
+        }
+        .result {
+            margin-top: 20px;
+            text-align: left;
+            color: #333;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <h1>Años Cumplidos</h1>
+        <input type="number" id="edad" placeholder="Introduce tu edad">
+        <br>
+        <button onclick="mostrarAniosCumplidos()">Mostrar Años Cumplidos</button>
+        <div id="result" class="result"></div>
+    </div>
+
+    <script>
+        function mostrarAniosCumplidos() {
+            let edad = parseInt(document.getElementById('edad').value);
+            let i = 1;
+            let resultado = '';
+
+
+            if (isNaN(edad) || edad <= 0) {
+                document.getElementById('result').innerHTML = 'Por favor, introduce una edad válida mayor que 0.';
+                return;
+            }
+
+            while (i <= edad) {
+                resultado += `Has cumplido ${i} años.`;
+                i++;
+            }
+            document.getElementById('result').innerHTML = resultado;
+        }
+    </script>
+</body>
+</html>

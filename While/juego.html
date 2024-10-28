@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Juego de Adivinanza</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f9;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            background-image: url('https://png.pngtree.com/thumb_back/fw800/background/20230930/pngtree-web-development-concept-programming-and-coding-illustrated-in-3d-image_13511770.png'); 
+            background-size: cover;
+            color: #333;
+        }
+        .container {
+            background-color: rgba(112, 109, 109, 0.9);
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            width: 300px;
+        }
+        h1 {
+            color: #2c3e50;
+            margin-bottom: 20px;
+        }
+        input {
+            padding: 10px;
+            width: 80%;
+            margin: 10px 0;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            cursor: auto;
+        }
+        button {
+            padding: 10px 20px;
+            background-color: #fbff04;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            margin-top: 10px;
+            transition: background-color 0.3s;
+        }
+        button:hover {
+            background-color: #ff0d0d;
+        }
+        #resultado {
+            margin-top: 20px;
+            font-size: 1.2em;
+            color: #ffffff;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <h1>Juego de Adivinanza</h1>
+        <p>Adivina un número entre 1 y 100:</p>
+        <input type="number" id="adivinanza" placeholder="Ingresa tu número">
+        <br>
+        <button onclick="iniciarJuego()">Adivinar</button>
+        <div id="resultado"></div>
+    </div>
+
+    <script>
+        let numeroAleatorio;
+        let intentos;
+
+        function iniciarJuego() {
+            numeroAleatorio = Math.floor(Math.random() * 100) + 1; 
+            intentos = 0; // Reinicia los intentos
+            document.getElementById('resultado').innerHTML = '¡Comienza a adivinar!';
+            console.log(`Número a adivinar (debug): ${numeroAleatorio}`); 
+        }
+
+        function adivinar() {
+            const adivinanza = parseInt(document.getElementById('adivinanza').value);
+            const resultadoDiv = document.getElementById('resultado');
+
+            if (isNaN(adivinanza) || adivinanza < 1 || adivinanza > 100) {
+                resultadoDiv.innerHTML = 'Por favor, introduce un número entre 1 y 100.';
+                console.log('Entrada no válida.');
+                return;
+            }
+
+            intentos++; 
+
+            while (true) {
+                if (adivinanza < numeroAleatorio) {
+                    resultadoDiv.innerHTML = 'El número es mayor. Intenta de nuevo.';
+                    console.log('El número es mayor.');
+                    break; 
+                } else if (adivinanza > numeroAleatorio) {
+                    resultadoDiv.innerHTML = 'El número es menor. Intenta de nuevo.';
+                    console.log('El número es menor.');
+                    break; 
+                } else {
+                    resultadoDiv.innerHTML = `¡Correcto! Adivinaste el número en ${intentos} intentos.`;
+                    console.log(`¡Correcto! Adivinaste el número en ${intentos} intentos.`);
+                    return; 
+                }
+            }
+        }
+    </script>
+</body>
+</html>

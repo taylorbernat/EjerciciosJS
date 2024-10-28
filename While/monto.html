@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simulador de Cajero Automático</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f56868;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+        .container {
+            background-color: rgb(236, 105, 18);
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            width: 300px;
+        }
+        h1 {
+            color: #333;
+            margin-bottom: 20px;
+        }
+        input {
+            padding: 10px;
+            width: 80%;
+            margin: 10px 0;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            cursor: auto;
+        }
+        button {
+            padding: 10px 20px;
+            background-color: #007bff;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            margin-top: 10px;
+            transition: background-color 0.3s;
+        }
+        button:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <h1>Cajero Automático</h1>
+        <input type="number" id="monto" placeholder="Introduce el monto a retirar">
+        <br>
+        <button onclick="retirar()">Retirar</button>
+        <button onclick="reset()">Resetear Saldo</button>
+    </div>
+
+    <script>
+        let saldo = 1000; // Saldo inicial
+        console.log(`Saldo disponible: $${saldo}`);
+
+        function retirar() {
+            let monto = parseInt(document.getElementById('monto').value);
+
+            if (isNaN(monto) || monto <= 0) {
+                console.log('Por favor, introduce un monto válido para retirar.');
+                return;
+            }
+
+            if (monto > saldo) {
+                console.log(`Error: el monto excede el saldo disponible ($${saldo}).`);
+                return;
+            }
+
+            let i = monto;
+            console.log(`Intentando retirar $${monto}...`);
+            while (i > 0) {
+                saldo--;
+                i--;
+                console.log(`Monto restante a retirar: $${i}, Saldo actual: $${saldo}`);
+            }
+
+            console.log(`Retiro exitoso. Saldo restante: $${saldo}`);
+        }
+
+        function reset() {
+            saldo = 1000;
+            console.log(`Saldo disponible: $${saldo}`);
+        }
+    </script>
+
+</body>
+</html>

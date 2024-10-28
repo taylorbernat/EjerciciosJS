@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simulador de Viaje en Coche</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f9;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            background-image: url('https://png.pngtree.com/thumb_back/fw800/background/20231004/pngtree-stunning-3d-illustration-of-programming-and-web-development-image_13521894.png'); 
+            background-size: cover;
+            color: #333;
+        }
+        .container {
+            background-color: rgba(255, 255, 255, 0.9);
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            width: 300px;
+        }
+        h1 {
+            color: #2c3e50;
+            margin-bottom: 20px;
+        }
+        input {
+            padding: 10px;
+            width: 80%;
+            margin: 10px 0;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+        button {
+            padding: 10px 20px;
+            background-color: #3498db;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            margin-top: 10px;
+            transition: background-color 0.3s;
+        }
+        button:hover {
+            background-color: #2980b9;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <h1>Simulador de Viaje</h1>
+        <input type="number" id="distancia" placeholder="Distancia del viaje (km)">
+        <input type="number" id="velocidad" placeholder="Velocidad promedio (km/h)">
+        <br>
+        <button onclick="calcularTiempo()">Calcular Tiempo</button>
+        <button onclick="iniciarNuevoViaje()">Nuevo Viaje</button>
+    </div>
+
+    <script>
+        let continuar = true;
+
+        function calcularTiempo() {
+            let distancia = parseFloat(document.getElementById('distancia').value);
+            let velocidad = parseFloat(document.getElementById('velocidad').value);
+
+            if (isNaN(distancia) || distancia <= 0 || isNaN(velocidad) || velocidad <= 0) {
+                console.log('Por favor, introduce una distancia y velocidad válidas.');
+                return;
+            }
+
+            let tiempo = distancia / velocidad;
+            console.log(`Distancia: ${distancia} km, Velocidad promedio: ${velocidad} km/h`);
+            console.log(`Tiempo estimado de viaje: ${tiempo.toFixed(2)} horas`);
+
+            continuar = confirm("¿Deseas realizar otro viaje?");
+            if (!continuar) {
+                console.log("Simulación de viaje finalizada.");
+            }
+        }
+
+        function iniciarNuevoViaje() {
+            if (continuar) {
+                document.getElementById('distancia').value = '';
+                document.getElementById('velocidad').value = '';
+                console.log("Listo para un nuevo viaje.");
+            }
+        }
+    </script>
+</body>
+</html>

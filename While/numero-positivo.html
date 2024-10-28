@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cuenta Regresiva</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f9;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            background-image: url('https://png.pngtree.com/background/20230625/original/pngtree-the-world-of-web-3d-illustration-depicting-programming-coding-and-web-picture-image_4043968.jpg'); 
+            background-size: cover;
+            color: #333;
+        }
+        .container {
+            background-color: #000000;;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 10 15 30px #2c3e50;;
+            text-align: center;
+            width: 300px;
+        }
+        h1 {
+            color: #ffffff;
+            margin-bottom: 20px;
+        }
+        input {
+            padding: 10px;
+            width: 80%;
+            margin: 10px 0;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+        button {
+            padding: 10px 20px;
+            background-color: #3498db;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            margin-top: 10px;
+            transition: background-color 0.3s;
+        }
+        button:hover {
+            background-color: #2980b9;
+        }
+        #resultado {
+            margin-top: 20px;
+            font-size: 1.2em;
+            color: #ffffff;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <h1>Cuenta Regresiva</h1>
+        <input type="number" id="numero" placeholder="Ingresa un número entero positivo">
+        <br>
+        <button onclick="iniciarCuentaRegresiva()">Iniciar Cuenta Regresiva</button>
+        <div id="resultado"></div>
+    </div>
+
+    <script>
+        function iniciarCuentaRegresiva() {
+            let numero = parseInt(document.getElementById('numero').value);
+            const resultadoDiv = document.getElementById('resultado');
+            resultadoDiv.innerHTML = ''; 
+
+            if (isNaN(numero) || numero <= 0) {
+                resultadoDiv.innerHTML = 'Por favor, introduce un número entero positivo.';
+                console.log('Por favor, introduce un número entero positivo.');
+                return;
+            }
+
+            let contador = numero;
+            const interval = setInterval(() => {
+                resultadoDiv.innerHTML += `${contador}<br>`;
+                console.log(contador); 
+                contador--;
+
+                if (contador < 0) {
+                    clearInterval(interval);
+                    resultadoDiv.innerHTML += '¡Tiempo cumplido!';
+                    console.log('¡Tiempo cumplido!'); 
+                }
+            }, 1000); 
+        }
+    </script>
+</body>
+</html>

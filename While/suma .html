@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="suma.css">
+    <title>Suma de Números Pares e Impares</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f8ea9b;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+
+        .container {
+            background-color: #f38405;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            border: 4px solid #050505;
+        }
+
+        input {
+            background-color: #f7f19f;
+            padding: 10px;
+            margin: 10px 0;
+            border: 4px solid #000000;
+            border-radius: 5px;
+            cursor: auto;
+        }
+
+        button {
+            padding: 20px 40px;
+            background-color: #e2fa0a;
+            color: rgb(0, 0, 0);
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        button:hover {
+            background-color: #f50303;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Suma de Pares e Impares</h1>
+        <input type="number" id="numero" placeholder="Introduce un número entero positivo">
+        <br>
+        <button onclick="calcularSumas()">Calcular</button>
+    </div>
+
+    <script>
+        function calcularSumas() {
+            let numero = parseInt(document.getElementById('numero').value);
+            let sumaPares = 0;
+            let sumaImpares = 0;
+            let i = 1;
+
+            if (isNaN(numero) || numero <= 0) {
+                console.error('Por favor, introduce un número entero positivo.');
+                return;
+            }
+
+            while (i <= numero) {
+                if (i % 2 === 0) {
+                    sumaPares += i; 
+                } else {
+                    sumaImpares += i; 
+                }
+                i++;
+            }
+
+            console.log(`La suma de los números pares desde 1 hasta ${numero} es: ${sumaPares}`);
+            console.log(`La suma de los números impares desde 1 hasta ${numero} es: ${sumaImpares}`);
+        }
+    </script>
+</body>
+</html>

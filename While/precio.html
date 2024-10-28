@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simulador de Compra en Línea</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #0fdf5e;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+        .container {
+            background-color: rgb(158, 236, 184);
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            width: 300px;
+        }
+        h1 {
+            color: #333;
+            margin-bottom: 20px;
+        }
+        input {
+            padding: 10px;
+            width: 80%;
+            margin: 10px 0;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            cursor: auto;
+        }
+        button {
+            padding: 10px 20px;
+            background-color: #007bff;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            margin-top: 10px;
+            transition: background-color 0.3s;
+        }
+        button:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <h1>Compra en Línea</h1>
+        <input type="number" id="precio" placeholder="Introduce el precio del producto">
+        <input type="number" id="cantidad" placeholder="Cantidad a comprar">
+        <br>
+        <button onclick="agregarProducto()">Agregar Producto</button>
+        <button onclick="finalizarCompra()">Finalizar Compra</button>
+    </div>
+
+    <script>
+        let total = 0;
+
+        function agregarProducto() {
+            let precio = parseFloat(document.getElementById('precio').value);
+            let cantidad = parseInt(document.getElementById('cantidad').value);
+
+            if (isNaN(precio) || precio <= 0 || isNaN(cantidad) || cantidad <= 0) {
+                console.log('Por favor, introduce un precio y cantidad válidos.');
+                return;
+            }
+
+            let costoProducto = precio * cantidad;
+            total += costoProducto;
+
+            console.log(`Producto agregado: Precio $${precio}, Cantidad ${cantidad}, Costo $${costoProducto}`);
+            console.log(`Costo total acumulado: $${total}`);
+
+            document.getElementById('precio').value = '';
+            document.getElementById('cantidad').value = '';
+        }
+
+        function finalizarCompra() {
+            console.log(`Compra finalizada. Costo total de la compra: $${total}`);
+            total = 0; 
+        }
+    </script>
+
+</body>
+</html>
