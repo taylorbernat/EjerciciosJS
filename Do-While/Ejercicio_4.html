@@ -1,0 +1,41 @@
+<html>
+    <body>
+        <script>
+            var menu = {
+                "hamburguesa": 5.00,
+                "papas fritas": 2.50,
+                "refresco": 1.50,
+                "hot dog": 3.00,
+                "ensalada": 4.00
+            };
+            
+            var total = 0;
+            var seguir = true;
+            
+            do {
+                console.log("Menú de Comidas Rápidas:");
+                for (var platillo in menu) {
+                    console.log(platillo.charAt(0).toUpperCase() + platillo.slice(1) + ": $" + menu[platillo]);
+                }
+            
+                var pedido = prompt("¿Qué te gustaría pedir? (o escribe 'salir' para finalizar)");
+                
+                if (pedido === 'salir') {
+                    seguir = false;
+                } else {
+                    var pedidoLower = pedido.toLowerCase();
+                    if (pedidoLower in menu) {
+                        total += menu[pedidoLower];
+                        console.log("Has agregado " + pedido + " al pedido. Total actual: $" + total);
+                    } else {
+                        console.log("Lo siento, no tenemos ese platillo en el menú.");
+                    }
+                }
+            
+            } while (seguir);
+            
+            console.log("El costo total de tu pedido es: $" + total);
+            console.log("¡Gracias por tu pedido!");
+        </script>
+    </body>
+</html>

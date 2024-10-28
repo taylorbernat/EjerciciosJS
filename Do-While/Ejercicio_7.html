@@ -1,0 +1,36 @@
+<html>
+    <body>
+        <script>
+            let tareas = ""; 
+
+            function agregarTarea() {
+                let descripcion = prompt("Ingrese la descripción de la tarea:");
+                let fechaVencimiento = prompt("Ingrese la fecha de vencimiento (DD/MM/YYYY):");
+                tareas += `Tarea: ${descripcion}, Fecha de Vencimiento: ${fechaVencimiento}\n`;
+            }
+
+            function mostrarTareas() {
+                if (tareas) {
+                    console.log("Lista de Tareas:");
+                    console.log(tareas);
+                } else {
+                    console.log("No se han agregado tareas.");
+                }
+            }
+
+            function gestionarTareas() {
+                let continuar; 
+
+                do {
+                    agregarTarea(); 
+
+                    continuar = prompt("¿Desea agregar otra tarea? (sí/no)").toLowerCase() === "sí";
+                } while (continuar);
+
+                mostrarTareas(); 
+            }
+
+            gestionarTareas();
+        </script>
+    </body>
+</html>

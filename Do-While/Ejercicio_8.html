@@ -1,0 +1,37 @@
+<html>
+    <body>
+        <script>
+            let totalVentas = 0; 
+            let resumenVentas = "";
+
+
+            function registrarVenta() {
+                let producto = prompt("Ingrese el nombre del producto vendido:");
+                let precio = parseFloat(prompt("Ingrese el precio del producto:"));
+
+                if (!isNaN(precio) && precio >= 0) {
+                    totalVentas += precio; 
+                    resumenVentas += `Producto: ${producto}, Precio: $${precio.toFixed(2)}\n`; 
+                } else {
+                    alert("Por favor, ingrese un precio válido.");
+                }
+            }
+
+            function gestionarVentas() {
+                let continuar; 
+
+                do {
+                    registrarVenta();
+                    continuar = prompt("¿Desea registrar otra venta? (sí/no)").toLowerCase() === "sí";
+                } while (continuar);
+
+           
+                console.log("Monto Total de Ventas: $" + totalVentas.toFixed(2));
+                console.log("Resumen de Ventas:\n" + resumenVentas);
+            }
+
+
+            gestionarVentas();
+        </script>
+    </body>
+</html>

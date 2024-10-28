@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sumador de Números</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            font-family: Arial, sans-serif;
+            margin: 0;
+            background-image: url("https://media.gettyimages.com/id/1193698730/es/v%C3%ADdeo/mans-hands-coding-en-el-ordenador-port%C3%A1til-close-up-hombre-usando-computadoras-port%C3%A1tiles-el.jpg?s=640x640&k=20&c=-wTbHCB3hts61Q3Z0npp9p6PErPryAKjx7XEAXDLIa8=");
+        }
+        .container {
+            text-align: center;
+            background-color: #000000;
+            padding: 20px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            border-radius: 8px;
+        }
+        h2, p {
+            font-family: 'Courier New', Courier, monospace;
+            padding: 10px 20px;
+            font-size: 16px;
+            border: none;
+            border-radius: 5px;
+            color: white;
+            cursor: pointer;
+            margin-top: 10px;
+        }
+        input {
+            font-family: 'Courier New', Courier, monospace;
+            padding: 10px;
+            font-size: 16px;
+            border: 1px solid #807d7d;
+            border-radius: 5px;
+            margin-top: 10px;
+        }
+        button {
+            font-family: 'Courier New', Courier, monospace;
+            padding: 10px 20px;
+            font-size: 16px;
+            border: none;
+            border-radius: 5px;
+            background-color: #043eff;
+            color: white;
+            cursor: pointer;
+            margin-top: 10px;
+        }
+        button:hover {
+            background-color: #218838;
+        }
+        .result {
+            font-size: 18px;
+            color: #ffffff;
+            margin-top: 15px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2>Sumador de Números Positivos</h2>
+        <p>Ingrese números positivos. El programa finalizará al ingresar un número negativo.</p>
+        <input type="number" id="numero" placeholder="Ingrese un número">
+        <button onclick="sumarNumeros()">Sumar</button>
+        <div id="resultado" class="result"></div>
+    </div>
+
+    <script>
+        function sumarNumeros() {
+            let suma = 0;
+            let numero;
+            do {
+                numero = parseFloat(prompt("Ingrese un número positivo:"));
+                if (numero >= 0) {
+                    suma += numero;
+                }
+            } while (numero >= 0);
+
+            document.getElementById("resultado").innerText = "La suma de los números ingresados es: " + suma;
+            console.log("La suma de los números ingresados es:", suma);
+        }
+    </script>
+</body>
+</html>

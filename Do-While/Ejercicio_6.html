@@ -1,0 +1,53 @@
+<html>
+    <body>
+        <script> 
+            var totalNotas = 0;
+            var cantidadNotas = 0;
+            var notas = []; 
+            var continuar;
+            var indice = 0; 
+            
+            do {
+                var nota = parseFloat(prompt("Ingresa el resultado del examen (0-100):"));
+            
+
+                if (nota >= 0) {
+                    if (nota <= 100) {
+                        totalNotas += nota;
+                        cantidadNotas++;
+                        notas[indice] = nota; 
+                        indice++; 
+                    } else {
+                        console.log("Nota inválida. Debe estar entre 0 y 100.");
+                    }
+                } else {
+                    console.log("Nota inválida. Debe estar entre 0 y 100.");
+                }
+            
+                continuar = prompt("¿Deseas ingresar otra nota? (si/no):");
+            } while (continuar === 'si');
+
+            console.log("Notas ingresadas:");
+            for (var i = 0; i < cantidadNotas; i++) {
+                console.log(notas[i]);
+            }
+            if (cantidadNotas > 0) {
+                var promedio = totalNotas / cantidadNotas;
+                console.log("El promedio de las notas es: " + promedio);
+            
+            
+            
+                if (promedio >= 60) {
+                    console.log("El estudiante ha aprobado.");
+                } else {
+                    console.log("El estudiante ha reprobado.");
+                }
+            } else {
+                console.log("No se ingresaron notas.");
+            }
+            
+            
+            
+        </script>
+    </body>
+</html>

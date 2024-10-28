@@ -1,0 +1,29 @@
+<html>
+    <body>
+        <script>
+            var libros = "";
+var continuar;
+
+do {
+
+    var titulo = prompt("Ingresa el título del libro:");
+    var autor = prompt("Ingresa el autor del libro:");
+    var paginas = prompt("Ingresa el número de páginas del libro:");
+
+    
+    libros += `Título: ${titulo}, Autor: ${autor}, Páginas: ${paginas}\n`;
+
+
+    continuar = confirm("¿Quieres registrar otro libro?");
+} while (continuar);
+
+
+if (libros) {
+    console.log("Libros registrados:\n" + libros);
+} else {
+    console.log("No se registraron libros.");
+}
+
+        </script>
+    </body>
+</html>

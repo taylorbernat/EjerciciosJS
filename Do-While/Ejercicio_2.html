@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Menú de Opciones</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            font-family: Arial, sans-serif;
+            margin: 0;
+            background-image: url("https://image.slidesdocs.com/responsive-images/background/symbolic-concept-of-programming-code-parts-in-3d-render-powerpoint-background_6977015357__960_540.jpg");
+        }
+        .container {
+            text-align: center;
+            background-color: #000000;
+            padding: 20px;
+            box-shadow: 0 0 10px rgb(5, 22, 255);
+            border-radius: 8px;
+        }
+        h2,p {
+            font-family: 'Courier New', Courier, monospace;
+            padding: 10px 20px;
+            font-size: 16px;
+            border: none;
+            border-radius: 5px;
+            color: white;
+            cursor: pointer;
+            margin-top: 10px;
+        }
+        button {
+            font-family: 'Courier New', Courier, monospace;
+            padding: 10px 20px;
+            font-size: 16px;
+            border: none;
+            border-radius: 5px;
+            background-color: #1707f0;
+            color: white;
+            cursor: pointer;
+            margin-top: 10px;
+        }
+        button:hover {
+            background-color: #0056b3;
+        }
+        .result {
+            font-family: 'Courier New', Courier, monospace;
+            font-size: 18px;
+            color: #333;
+            margin-top: 15px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2>Menú de Opciones</h2>
+        <p>Seleccione una opción del menú.</p>
+        <button onclick="mostrarMenu()">Abrir Menú</button>
+        <div id="resultado" class="result"></div>
+    </div>
+
+    <script>
+        function mostrarMenu() {
+            let opcion;
+            do {
+                opcion = prompt(
+                    "Seleccione una opción:\n" +
+                    "1. Saludar\n" +
+                    "2. Mostrar Fecha\n" +
+                    "3. Mostrar un Mensaje\n" +
+                    "4. Salir"
+                );
+
+                switch(opcion) {
+                    case "1":
+                        alert("Hola, ¡un gusto saludarte!");
+                        console.log("Opción 1: Hola, ¡un gusto saludarte!");
+                        document.getElementById("resultado").innerText = "Elegiste: Saludar";
+                        break;
+                    case "2":
+                        const fecha = new Date().toLocaleDateString();
+                        alert("La fecha de hoy es: " + fecha);
+                        console.log("Opción 2: La fecha de hoy es:", fecha);
+                        document.getElementById("resultado").innerText = "Elegiste: Mostrar Fecha - " + fecha;
+                        break;
+                    case "3":
+                        alert("Este es un mensaje especial para ti.");
+                        console.log("Opción 3: Este es un mensaje especial para ti.");
+                        document.getElementById("resultado").innerText = "Elegiste: Mostrar un Mensaje";
+                        break;
+                    case "4":
+                        alert("Saliendo del programa.");
+                        console.log("Opción 4: Saliendo del programa.");
+                        document.getElementById("resultado").innerText = "Elegiste: Salir del programa";
+                        break;
+                    default:
+                        alert("Opción no válida. Intente nuevamente.");
+                        console.log("Opción no válida. Intente nuevamente.");
+                        document.getElementById("resultado").innerText = "Opción no válida. Intente nuevamente.";
+                }
+            } while (opcion !== "4");
+        }
+    </script>
+</body>
+</html>
