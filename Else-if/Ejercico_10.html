@@ -1,0 +1,26 @@
+<html>
+    <body>
+        <script>
+            function pedir_datos(){
+                return parseFloat(prompt("Ingrese el monto total de compra:"));
+            }
+            function procesarDatos(Valor){
+                if (Valor >= 1000) {
+                    return 0.10;
+                } else if (Valor >= 500) {
+                    return 0.05; 
+                }
+                return 0; 
+            }
+            function MostrarResultado(Resultado,descuento){
+                
+                final=Resultado - (Resultado * descuento);
+                console.log(`El monto total con el descuento aplicado es:`+final)
+                
+            }
+            Pedir=pedir_datos();
+            Procesar=procesarDatos(Pedir);
+            Mostrar=MostrarResultado(Pedir,Procesar);
+        </script>
+    </body>
+</html>

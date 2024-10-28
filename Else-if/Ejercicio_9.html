@@ -1,0 +1,56 @@
+<html>
+    <body>
+        <script>
+            function pedir_datos(){
+                var numero =prompt("Escriba un numero para saber si es par o impar");
+                return numero;
+            }
+
+
+            function pedir_datos2(){
+                var numero2 =prompt("Escriba un numero para saber si es par o impar");
+                return numero2;
+            }
+
+
+            function pedir_datos3(){
+                var numero3 =prompt("Escriba un numero para saber si es par o impar");
+                return numero3;
+            }
+
+
+            function procesarDatos(Valor,Valor2,Valor3){
+                val=parseInt(Valor);
+                val2=parseInt(Valor2);
+                val3=parseInt(Valor3);
+                console.log(val)
+                if (val == val2 && val2==val3){
+                    return 1;
+                }
+                else if (val != val2 && val2 !=val3 && val3 != val){
+                    return 3;
+                }
+                else if(val != val2 || val2 !=val3 || val3 != val){
+                    return 2;
+                }
+            }
+            function MostrarResultado(Resultado){
+                if (Resultado==1){
+                    console.log("equilatero");
+                    
+                }
+                else if(Resultado==2){
+                    console.log("isoseles");
+                }
+                else if(Resultado==3){
+                    console.log("escaleno");
+                }
+            }
+            Pedir=pedir_datos();
+            Pedir2=pedir_datos2();
+            Pedir3=pedir_datos3();
+            Procesar=procesarDatos(Pedir,Pedir2,Pedir3);
+            Mostrar=MostrarResultado(Procesar);
+        </script>
+    </body>
+</html>

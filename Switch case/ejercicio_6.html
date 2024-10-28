@@ -1,0 +1,36 @@
+<html>
+    <body>
+        <script>
+            function recomendarPelicula(edad) {
+                switch (true) {
+                    case (edad < 7):
+                        return "Recomendamos películas animadas y educativas aptas para todas las edades.";
+                    case (edad >= 7 && edad <= 17):
+                        return "Recomendamos películas adecuadas para la familia, como animaciones, aventuras y comedias familiares.";
+                    case (edad >= 18 && edad <= 30):
+                        return "Recomendamos una variedad de géneros, como acción, drama, comedia y ciencia ficción.";
+                    case (edad > 30):
+                        return "Recomendamos películas clásicas y dramas que pueden ser de su interés.";
+                    default:
+                        return "Edad no válida.";
+                }
+            }
+
+            function main() {
+                var edad = prompt("Ingrese su edad:");
+
+                if (edad === "" || +edad <= 0) {
+                    console.log("Por favor, ingrese una edad válida.");
+                    return;
+                }
+
+                edad = parseInt(edad);
+                var recomendacion = recomendarPelicula(edad);
+                
+                console.log(recomendacion);
+            }
+
+            main();
+        </script>
+    </body>
+</html>

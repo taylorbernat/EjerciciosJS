@@ -1,0 +1,59 @@
+<html>
+    <body>
+        <script>
+            function calcularCosto(tipoProducto, cantidad) {
+                var precioBase;
+                var descuento = 0;
+            
+                switch (tipoProducto) {
+                    case 'A':
+                        precioBase = 100; 
+                        descuento = 0.10;
+                        break;
+                    case 'V':
+                        precioBase = 200; 
+                        descuento = 0.05; 
+                        break;
+                    case 'E':
+                        precioBase = 300; 
+                        descuento = 0; 
+                        break;
+                    default:
+                        console.log("Tipo de producto no válido.");
+                        return null;
+                }
+            
+                var costoSinDescuento = precioBase * cantidad;
+                var costoConDescuento = costoSinDescuento * (1 - descuento);
+            
+                return {
+                    costoSinDescuento: costoSinDescuento,
+                    costoConDescuento: costoConDescuento
+                };
+            }
+            
+            function main() {
+                var tipoProducto = prompt("Ingrese el tipo de producto (A - Alimentos, V - Vestimenta, E - Electrónicos):").toUpperCase();
+                var cantidad = prompt("Ingrese la cantidad de unidades:");
+            
+                
+                if (cantidad === "" || +cantidad <= 0) {
+                    console.log("La cantidad debe ser un número positivo.");
+                    return;
+                }
+            
+                cantidad = parseInt(cantidad);
+            
+                var costos = calcularCosto(tipoProducto, cantidad);
+            
+                if (costos) {
+                    console.log("Costo sin descuento: " + costos.costoSinDescuento);
+                    console.log("Costo con descuento: " + costos.costoConDescuento);
+                }
+            }
+            
+            main();
+        </script>
+    </body>
+</html>
+            

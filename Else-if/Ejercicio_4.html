@@ -1,0 +1,38 @@
+<html>
+    <body>
+        <script>
+            function pedir_datos(){
+                var numero =prompt("Escriba un numero para saber si es par o impar");
+                return numero;
+            }
+            function procesarDatos(Valor){
+                val=parseInt(Valor);
+                if (val <0){
+                    return "negativo";
+                }
+                else if (val==0){
+                    return "cero";
+                }
+                else{
+                    return"positivo"
+                }
+            }
+            function MostrarResultado(Resultado){
+                if (Resultado =="negativo"){
+                    console.log("eta vaina e negativo");
+                    
+                }
+                else if (Resultado=="positivo"){
+                    console.log("eta vaina e positivo");
+                }
+                else{
+                    console.log("eta vaina e cero");
+
+                }
+            }
+            Pedir=pedir_datos();
+            Procesar=procesarDatos(Pedir);
+            Mostrar=MostrarResultado(Procesar);
+        </script>
+    </body>
+</html>

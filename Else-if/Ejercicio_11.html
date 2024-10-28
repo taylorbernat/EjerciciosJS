@@ -1,0 +1,34 @@
+<html>
+    <body>
+        <script>
+            function pedir_datos(){
+                var numero = prompt("Ingrese el precio del producto:");
+                return numero;
+            }
+
+            function pedir_datos2(){
+                var numero2 = prompt("Ingrese la cantidad comprada:");
+                return numero2;
+            }
+
+
+            function procesarDatos(Valor,Valor2){
+                var total = Valor * Valor2;
+                if (Valor2 >= 10) {
+                    return total * 0.10;
+                } else if (Valor2 >= 5) {
+                    return total * 0.05;
+                }
+                return 0;
+            }
+            function MostrarResultado(Resultado,Valor,Valor2){
+                var descuento=(Valor2 * Valor) - Resultado;
+                console.log(`El precio total a pagar es:` + descuento);
+            }
+            Pedir=pedir_datos();
+            Pedir2=pedir_datos2();
+            Procesar=procesarDatos(Pedir,Pedir2);
+            Mostrar=MostrarResultado(Procesar,Pedir,Pedir2);
+        </script>
+    </body>
+</html>

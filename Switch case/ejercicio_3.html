@@ -1,0 +1,47 @@
+<html>
+    <body>
+        <script>
+            function obtenerCalificacion() {
+                return Number(prompt("Ingresa tu calificación (0-100):"));
+            }
+
+            function determinarNota(calificacion) {
+                var mensaje;
+
+                switch (true) {
+                    case (calificacion >= 90 && calificacion <= 100):
+                        mensaje = "A";
+                        break;
+                    case (calificacion >= 80 && calificacion < 90):
+                        mensaje = "B";
+                        break;
+                    case (calificacion >= 70 && calificacion < 80):
+                        mensaje = "C";
+                        break;
+                    case (calificacion >= 60 && calificacion < 70):
+                        mensaje = "D";
+                        break;
+                    case (calificacion >= 0 && calificacion < 60):
+                        mensaje = "F";
+                        break;
+                    default:
+                        mensaje = "Calificación no válida. Debe estar entre 0 y 100.";
+                }
+
+                return mensaje;
+            }
+
+            function mostrarResultado(mensaje) {
+                console.log("Tu calificación es: " + mensaje);
+            }
+
+            function main() {
+            var calificacion = obtenerCalificacion();
+            var mensaje = determinarNota(calificacion);
+            mostrarResultado(mensaje);
+            }
+
+            main();
+        </script>
+    </body>
+</html>

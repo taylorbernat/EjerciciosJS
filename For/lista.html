@@ -1,0 +1,39 @@
+<html>
+    <body>
+        <script>var 
+            suma = 0; // Inicializar la suma
+            var cantidad = prompt("¿Cuántos números quieres ingresar?");
+            var numeros = []; // Array para almacenar los números ingresados
+            
+            for (var i = 0; i < cantidad; i++) {
+                // Solicitar al usuario que ingrese un número
+                var input = prompt("Ingresa el número " + (i + 1) + ":");
+            
+                // Convertir la entrada a un número
+                var numero = parseFloat(input);
+            
+                // Verificar si la entrada es un número válido
+                if (numero === numero) { // Esta condición es true si es un número
+                    suma += numero; // Sumar el número a la suma total
+                    numeros.push(numero); // Agregar el número al array
+                } else {
+                    console.log("Por favor, ingresa un número válido."); // Mensaje de error
+                    i--; // Decrementar i para repetir la iteración
+                }
+            }
+            
+            // Mostrar la cantidad de números ingresados y la suma total
+            console.log("Cantidad de números ingresados: " + cantidad);
+            console.log("Números ingresados:");
+            
+            for (var j = 0; j < numeros.length; j++) {
+                console.log(numeros[j]); // Mostrar cada número ingresado
+            }
+            
+            console.log("La suma total de los números ingresados es: " + suma);
+            
+            
+
+        </script>
+    </body>
+</html>

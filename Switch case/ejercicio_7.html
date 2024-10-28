@@ -1,0 +1,46 @@
+<html>
+    <body>
+        <script>
+            var clasificacion = {
+                equipo1: 0,
+                equipo2: 0
+            };
+
+            function actualizarClasificacion(resultado) {
+                switch (resultado) {
+                    case "ganado":
+                        clasificacion.equipo1 += 3;
+                        clasificacion.equipo2 += 0;
+                        break;
+                    case "perdido":
+                        clasificacion.equipo1 += 0;
+                        clasificacion.equipo2 += 3;
+                        break;
+                    case "empatado":
+                        clasificacion.equipo1 += 1;
+                        clasificacion.equipo2 += 1;
+                        break;
+                    default:
+                        console.log("Resultado no válido. Ingrese 'ganado', 'perdido' o 'empatado'.");
+                        return;
+                }
+            }
+
+            function mostrarClasificacion() {
+                console.log("Clasificación Actual:");
+                console.log("Equipo 1: " + clasificacion.equipo1 + " puntos");
+                console.log("Equipo 2: " + clasificacion.equipo2 + " puntos");
+            }
+
+            function main() {
+                var resultado = prompt("Ingrese el resultado del partido (ganado, perdido o empatado):").toLowerCase();
+                
+                actualizarClasificacion(resultado);
+                
+                mostrarClasificacion();
+            }
+
+            main();
+        </script>
+    </body>
+</html>

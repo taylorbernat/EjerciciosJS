@@ -1,0 +1,54 @@
+<html>
+    <body>
+        <script>
+            function pedir_datos(){
+                var numero =prompt("Escriba la calificacion del estudiante");
+                return numero;
+            }
+            function procesarDatos(Valor){
+                val=parseInt(Valor);
+                if (val >=90 && val<=100){
+                    return "A";
+                }
+                else if(val >=70 && val<=89){
+                    return "B";
+                }
+                else if(val >=50 && val<=69){
+                    return "C";
+                }
+                else if(val >=30 && val<=49){
+                    return "D";
+                }
+                else if(val >=10 && val<=29){
+                    return "E";
+                }
+                else if(val >=0 && val<=9){
+                    return "F";
+                }
+            }
+            function MostrarResultado(Resultado){
+                if (Resultado=="A"){
+                    console.log("Su calificacion es A")
+                }
+                else if(Resultado=="B"){
+                    console.log("Su calificacion es B")
+                }
+                else if(Resultado=="C"){
+                    console.log("Su calificacion es C")
+                }
+                else if(Resultado=="D"){
+                    console.log("Su calificacion es D")
+                }
+                else if(Resultado=="E"){
+                    console.log("Su calificacion es E")
+                }
+                else if(Resultado=="F"){
+                    console.log("Su calificacion es F")
+                }
+            }
+            Pedir=pedir_datos();
+            Procesar=procesarDatos(Pedir);
+            Mostrar=MostrarResultado(Procesar);
+        </script>
+    </body>
+</html>

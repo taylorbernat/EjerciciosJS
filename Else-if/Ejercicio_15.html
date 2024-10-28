@@ -1,0 +1,24 @@
+<html>
+    <body>
+        <script>
+
+        const TEMP_MIN = 18; 
+        const TEMP_MAX = 25; 
+
+        function solicitarTemperatura() {
+            const temperatura = parseFloat(prompt("Ingrese la temperatura actual en °C:"));
+            verificarTemperatura(temperatura);
+        }
+
+        function verificarTemperatura(temperatura) {
+            if (temperatura >= TEMP_MIN && temperatura <= TEMP_MAX) {
+                console.log("La temperatura es adecuada.");
+            } else {
+                console.log("La temperatura está fuera del rango deseado.");
+            }
+        }
+
+        solicitarTemperatura();
+        </script>
+    </body>
+</html>

@@ -1,0 +1,82 @@
+<html>
+    <body>
+        <script>
+            var menu = {
+                platos: {
+                    1: { nombre: "Pizza", precio: 10 },
+                    2: { nombre: "Hamburguesa", precio: 8 },
+                    3: { nombre: "Ensalada", precio: 6 }
+                },
+                bebidas: {
+                    1: { nombre: "Coca Cola", precio: 2 },
+                    2: { nombre: "Agua", precio: 1 },
+                    3: { nombre: "Jugo", precio: 3 }
+                }
+            };
+
+            var total = 0;
+
+            function mostrarMenu() {
+                console.log("Platos:");
+                for (var clave in menu.platos) {
+                    console.log(clave + ": " + menu.platos[clave].nombre + " - " + menu.platos[clave].precio);
+                }
+
+                console.log("\nBebidas:");
+                for (var clave in menu.bebidas) {
+                    console.log(clave + ": " + menu.bebidas[clave].nombre + " - " + menu.bebidas[clave].precio);
+                }
+            }
+
+            function seleccionarItem(tipo) {
+                var seleccion = prompt("Seleccione el número del " + tipo + ":");
+                var precio;
+
+                if (tipo === "plato") {
+                    precio = menu.platos[seleccion] ? menu.platos[seleccion].precio : null;
+                } else {
+                    precio = menu.bebidas[seleccion] ? menu.bebidas[seleccion].precio : null;
+                }
+
+                if (precio) {
+                    total += precio;
+                    console.log("Agregado: $" + precio);
+                } else {
+                    console.log("Selección no válida.");
+                }
+            }
+
+            function aplicarDescuento(metodo) {
+                switch (metodo) {
+                    case "efectivo":
+                        total *= 0.9; 
+                        break;
+                    case "tarjeta":
+                        total *= 0.95; 
+                        break;
+                    case "cheque":
+                        break;
+                    default:
+                        console.log("Método de pago no válido.");
+                        return;
+                }
+            }
+
+            function main() {
+                mostrarMenu();
+
+                seleccionarItem("plato");
+                seleccionarItem("bebida");
+
+                console.log("Total sin descuento: " + total);
+
+                var metodoPago = prompt("Ingrese el método de pago (efectivo, tarjeta, cheque):").toLowerCase();
+                aplicarDescuento(metodoPago);
+
+                console.log("Total con descuento: " + total);
+            }
+
+            main();
+        </script>
+    </body>
+</html>

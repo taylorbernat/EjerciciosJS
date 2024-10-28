@@ -1,0 +1,44 @@
+<html>
+    <body>
+        <script>
+            function obtenerEdad() {
+                return Number(prompt("Ingresa tu edad:"));
+            }
+
+            function determinarCategoriaEdad(edad) {
+                var categoria;
+                
+                switch (true) {
+                    case (edad >= 0 && edad <= 12):
+                        categoria = "niño";
+                        break;
+                    case (edad >= 13 && edad <= 17):
+                        categoria = "adolescente";
+                        break;
+                    case (edad >= 18 && edad <= 64):
+                        categoria = "adulto";
+                        break;
+                    case (edad >= 65):
+                        categoria = "adulto mayor";
+                        break;
+                    default:
+                        categoria = "Edad no válida";
+                }
+                
+                return categoria;
+            }
+
+            function mostrarResultado(categoria) {
+                console.log("Tu categoría de edad es: " + categoria);
+            }
+
+            function main() {
+            var edad = obtenerEdad();
+            var categoria = determinarCategoriaEdad(edad);
+            mostrarResultado(categoria);
+            }
+
+            main();
+        </script>
+    </body>
+</html>

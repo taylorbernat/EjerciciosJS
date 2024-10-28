@@ -1,0 +1,31 @@
+<html>
+    <body>
+        <script>
+            function pedir_datos(){
+                var numero =prompt("Escriba la calificacion del estudiante");
+                return numero;
+            }
+            function procesarDatos(Valor){
+                val=parseInt(Valor);
+                if (val >= 60){
+                    return true;
+                }
+                else{
+                    return false;
+                }
+            }
+            function MostrarResultado(Resultado){
+                if (Resultado){
+                    console.log("El estudiante aprovo");
+                    
+                }
+                else{
+                    console.log("El estudiante reprobo");
+                }
+            }
+            Pedir=pedir_datos();
+            Procesar=procesarDatos(Pedir);
+            Mostrar=MostrarResultado(Procesar);
+        </script>
+    </body>
+</html>

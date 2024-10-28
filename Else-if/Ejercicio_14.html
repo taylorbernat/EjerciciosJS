@@ -1,0 +1,29 @@
+<html>
+    <body>
+        <script>
+            const LIMITE_PESO = 100;
+
+        
+            function solicitarDatos() {
+                const peso = parseFloat(prompt("Ingrese su peso en kg:"));
+                const piso = parseInt(prompt("Ingrese el piso al que desea ir:"));
+
+                moverAscensor(peso, piso);
+            }
+            
+            function moverAscensor(peso, piso) {
+                if (verificarPeso(peso)) {
+                    console.log(`El ascensor se está moviendo al piso ${piso}.`);
+                } else {
+                    console.log("El ascensor está sobrecargado. Reduzca su peso.");
+                }
+            }
+
+            function verificarPeso(peso) {
+                return peso <= LIMITE_PESO;
+            }
+
+            solicitarDatos();
+        </script>
+    </body>
+</html>

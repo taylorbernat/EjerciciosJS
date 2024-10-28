@@ -1,0 +1,19 @@
+<HTML>
+    <body>
+        <Script>// Solicitar la edad del usuario
+            var edad = parseInt(prompt("Por favor, ingresa tu edad:"));
+            
+            // Verificar que la edad sea un número positivo
+            if (edad < 1) {
+                console.log("Por favor, ingresa una edad válida.");
+            } else {
+                // Mostrar todos los años cumplidos
+                console.log("Los años que has cumplido son:");
+                for (var i = 1; i <= edad; i++) {
+                    console.log(i);
+                }
+            }
+                    
+        </Script>
+    </body>
+</HTML>

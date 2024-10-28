@@ -1,0 +1,32 @@
+<HTML>
+    <body>
+        <Script>// Solicitar al usuario que ingrese el rango
+            var inicio = parseInt(prompt("Ingresa el número de inicio:"));
+            var fin = parseInt(prompt("Ingresa el número de fin:"));
+            
+            // Inicializar variables para la sumatoria y la cantidad de números
+            var sumatoria = 0;
+            var cantidad = 0;
+            
+            // Asegurarse de que el rango sea válido
+            if (fin >= inicio) {
+                // Usar un bucle for para calcular la sumatoria
+                for (var i = inicio; i <= fin; i++) {
+                    sumatoria += i; // Sumar el número actual
+                    cantidad++; // Contar los números
+                }
+            
+                // Calcular el promedio
+                var promedio = sumatoria / cantidad;
+            
+                // Imprimir los resultados en consola
+                console.log("el numero de inicio es " +inicio+ " el numero de fin es ", fin)
+                console.log("Sumatoria: " + sumatoria);
+                console.log("Promedio: " + promedio);
+            } else {
+                console.log("El número de fin debe ser mayor o igual que el número de inicio.");
+            }
+            
+        </Script>
+    </body>
+</HTML>

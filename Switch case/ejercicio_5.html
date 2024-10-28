@@ -1,0 +1,44 @@
+<html>
+    <body>
+        <script>
+            function calcularIMC(peso, altura) {
+                return peso / (altura * altura);
+            }
+
+            function categoriaIMC(imc) {
+                switch (true) {
+                    case (imc < 18.5):
+                        return "Bajo peso";
+                    case (imc < 24.9):
+                        return "Peso normal";
+                    case (imc < 29.9):
+                        return "Sobrepeso";
+                    default:
+                        return "Obesidad";
+                }
+            }
+
+            function main() {
+                var peso = prompt("Ingrese su peso en kilogramos:");
+                var altura = prompt("Ingrese su altura en metros:");
+                
+            
+                if (peso === "" || altura === "" || +peso <= 0 || +altura <= 0) {
+                    console.log("Por favor, ingrese valores válidos para peso y altura.");
+                    return;
+                }
+
+                peso = parseFloat(peso);
+                altura = parseFloat(altura);
+                
+                var imc = calcularIMC(peso, altura);
+                var categoria = categoriaIMC(imc);
+                
+                console.log("Su IMC es: " + imc);
+                console.log("Categoría: " + categoria);
+            }
+
+            main();
+        </script>
+    </body>
+</html>

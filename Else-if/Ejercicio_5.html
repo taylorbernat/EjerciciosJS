@@ -1,0 +1,45 @@
+<html>
+    <body>
+        <script>
+            function pedir_datos(){
+                var numero =prompt("Escriba un numero ");
+
+                return numero;
+            }
+            function pedir_dato2(){
+                var numero2 =prompt("Escriba un otro numero ");
+                return numero2;
+            }
+
+            function procesarDatos(Valor,Valor2){
+                val=parseInt(Valor);
+                val2=parseInt(Valor2);
+            
+
+                if (val <val2){
+                    return true;
+                }
+                else{
+                    return false;
+
+                    
+                }
+            }
+            function MostrarResultado(Resultado,Valor,valor2){
+                if (Resultado){
+                    console.log("El numero "+val+ " es menor a "+val2);
+                    
+                }
+                
+                else{
+                    console.log("El numero "+val+ " es mayor a "+val2);
+
+                }
+            }
+            Pedir=pedir_datos();
+            Pedir2=pedir_dato2();
+            Procesar=procesarDatos(Pedir,Pedir2);
+            Mostrar=MostrarResultado(Procesar,Pedir,Pedir2);
+        </script>
+    </body>
+</html>

@@ -1,0 +1,59 @@
+<html>
+    <body>
+        <script> 
+            var totalVentas = 0; // Inicializar el total de ventas
+            var productosVendidos = []; // Array para almacenar los productos vendidos
+            
+            var cantidadVentas = parseInt(prompt("¿Cuántas ventas desea registrar?"));
+            
+            // Validar que la cantidad de ventas sea un número positivo
+            if (cantidadVentas > 0) {
+                for (var i = 0; i < cantidadVentas; i++) {
+                    // Solicitar el nombre del producto
+                    var nombreProducto = prompt("Ingrese el nombre del producto:");
+            
+                    // Solicitar el precio del producto
+                    var precioProducto = parseFloat(prompt("Ingrese el precio del producto:"));
+            
+                    // Solicitar la cantidad vendida
+                    var cantidadVendida = parseInt(prompt("Ingrese la cantidad vendida:"));
+            
+                    // Validar que el precio y la cantidad sean números válidos
+                    if (precioProducto === precioProducto && cantidadVendida === cantidadVendida) {
+                        // Calcular total de la venta
+                        var totalVenta = precioProducto * cantidadVendida;
+            
+                        // Actualizar el total de ventas
+                        totalVentas += totalVenta;
+            
+                        // Almacenar información del producto vendido
+                        productosVendidos[i] = {
+                            nombre: nombreProducto,
+                            precio: precioProducto,
+                            cantidad: cantidadVendida,
+                            total: totalVenta
+                        };
+                    } else {
+                        console.log("Por favor, ingrese valores válidos para precio y cantidad."); // Mensaje de error
+                        i--; // Decrementar i para repetir la iteración
+                    }
+                }
+            
+                // Mostrar el total de ventas y los productos vendidos
+
+                console.log("Productos vendidos:");
+            
+                for (var j = 0; j < productosVendidos.length; j++) {
+                    console.log("Producto: " + productosVendidos[j].nombre + 
+                                ", Precio: $" + productosVendidos[j].precio + 
+                                ", Cantidad: " + productosVendidos[j].cantidad + 
+                                ", Total de la venta: $" + productosVendidos[j].total);
+                }
+            } else {
+                console.log("Por favor, ingrese una cantidad válida de ventas.");
+            }
+            console.log("Total de ventas: $" + totalVentas);
+            
+        </script>
+    </body>
+</html>

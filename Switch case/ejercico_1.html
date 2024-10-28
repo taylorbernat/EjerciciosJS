@@ -1,0 +1,51 @@
+<html>
+    <body>
+        <script>
+            function obtenerEntrada() {
+                var num1 = Number(prompt("Ingresa el primer número:"));
+                var num2 = Number(prompt("Ingresa el segundo número:"));
+                var operador = prompt("Ingresa el operador (+, -, *, /):");
+                return { num1, num2, operador };
+            }
+
+            function calcular(num1, num2, operador) {
+                var resultado;
+
+                switch (operador) {
+                    case '+':
+                        resultado = num1 + num2;
+                        break;
+                    case '-':
+                        resultado = num1 - num2;
+                        break;
+                    case '*':
+                        resultado = num1 * num2;
+                        break;
+                    case '/':
+                        if (num2 !== 0) {
+                            resultado = num1 / num2;
+                        } else {
+                            resultado = "Error: División por cero";
+                        }
+                        break;
+                    default:
+                        resultado = "Error: Operador no válido";
+                }
+
+                return resultado;
+            }
+
+            function mostrarResultado(num1, num2, operador, resultado) {
+                console.log("El resultado de " + num1 + " " + operador + " " + num2 + " es: " + resultado);
+            }
+
+            function main() {
+                var { num1, num2, operador } = obtenerEntrada();
+                var resultado = calcular(num1, num2, operador);
+                mostrarResultado(num1, num2, operador, resultado);
+            }
+
+            main();
+        </script>
+    </body>
+</html>

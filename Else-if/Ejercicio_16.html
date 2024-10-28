@@ -1,0 +1,35 @@
+<html>
+    <body>
+        <script>
+            const UMBRAL_ALERTA = 30; 
+
+            function iniciarPrograma() {
+                const temperatura = solicitarTemperatura();
+                verificarTemperatura(temperatura);
+            }
+
+            function solicitarTemperatura() {
+                const temperatura = parseFloat(prompt("Ingrese la temperatura actual en °C:"));
+                return temperatura;
+            }
+
+            function verificarTemperatura(temperatura) {
+                if (temperatura > UMBRAL_ALERTA) {
+                    mostrarAlerta();
+                } else {
+                    mostrarTemperaturaNormal();
+                }
+            }
+
+            function mostrarAlerta() {
+                console.log("¡Alerta! La temperatura está por encima del umbral de alerta.");
+            }
+
+            function mostrarTemperaturaNormal() {
+                console.log("La temperatura es normal.");
+            }
+
+            iniciarPrograma();
+        </script>
+    </body>
+</html>

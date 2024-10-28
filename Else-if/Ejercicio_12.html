@@ -1,0 +1,54 @@
+<html>
+    <body>
+        <script>
+            function pedir_datos(){
+                let nombre = prompt("Ingrese el nombre del cliente:");
+                let producto = prompt("Ingrese el nombre del producto:");
+                let cantidad = parseInt(prompt("Ingrese la cantidad comprada:"));
+                let precioUnitario = parseFloat(prompt("Ingrese el precio unitario del producto:"));
+                let esEstudiante = confirm("¿Es el cliente un estudiante?");
+                let tipoCliente = prompt("Ingrese el tipo de cliente (A, B, C, etc.):");
+
+                return {
+                    nombre,
+                    producto,
+                    cantidad,
+                    precioUnitario,
+                    esEstudiante,
+                    tipoCliente
+                };
+            }
+            function procesarDatos(Valor,Valor2){
+                return Valor * Valor2;
+            }
+
+
+            function procesarDatos2(Valor,Valor2){
+                let impuesto;
+                if (Valor2) {
+                    impuesto = Valor * 0.05; 
+                } else {
+                    impuesto = Valor * 0.13; 
+                }
+                return impuesto;
+            }
+
+
+
+            function procesarDatos3(Valor,Valor2){
+                return Valor + Valor2;
+            }
+
+
+
+            function MostrarResultado(Valor,Valor2,Valor3,Valor4){
+                console.log("Nombre del Cliente: "+ Valor.nombre+" \nProducto: "+Valor.producto+"\ncatidad"+Valor.cantidad+"\nPrecio unitario: "+Valor.precioUnitario+"\nSubtotal: "+Valor2+"\nImpuesto: "+Valor3+"\nTotal: "+Valor4+"\nTipo de Cliente: "+Valor.tipoCliente);
+            }
+            Pedir=pedir_datos();
+            Procesar=procesarDatos(Pedir.cantidad,Pedir.precioUnitario);
+            Procesar2=procesarDatos2(Procesar,Pedir.esEstudiante);
+            Procesar3=procesarDatos3(Procesar,Procesar2);
+            Mostrar=MostrarResultado(Pedir,Procesar,Procesar2,Procesar3);
+        </script>
+    </body>
+</html>

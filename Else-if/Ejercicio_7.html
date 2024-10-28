@@ -1,0 +1,70 @@
+<html>
+    <body>
+        <script>
+
+
+            function pedir_datos(){
+                var numero =prompt("Escriba  entre el primer numero entre el 1 y el 10");
+
+                return numero;
+            }
+
+
+
+            function pedir_datos2(){
+                var numero2 =prompt("Escriba  entre el segundo numero entre el 1 y el 10");
+                
+                return numero2;
+            }
+
+
+            function pedir_datos3(){
+                var numero3 =prompt("Escriba  entre el tercer numero entre el 1 y el 10");
+                return numero3;
+            }
+
+
+
+            function procesarDatos(Valor,Valor2,Valor3){
+                val=parseInt(Valor);
+                val2=parseInt(Valor2);
+                val3=parseInt(Valor3);
+
+                if (val>10 || val<1 || val2>10 || val2<1 || val3>10 || val3<1 ){
+                    return true;
+                }
+                else{
+                    return false;
+                }
+            }
+
+
+
+            function MostrarResultado(Resultado,Valor,Valor2,Valor3){
+                val=parseInt(Valor);
+                val2=parseInt(Valor2);
+                val3=parseInt(Valor3);
+                var promedio=(val+val2+val3)/3;
+                prom=parseInt(promedio);
+                console.log(prom);
+                if (Resultado){
+                    console.log("Uno de los valor esta fuera del rango");
+                    
+                }
+                else{
+                    if(promedio>5){
+                        console.log(promedio>5);
+                    }
+                    else{
+                        console.log(promedio>5);
+                    }
+                }
+            }
+            Pedir=pedir_datos();
+            Pedir2=pedir_datos2();
+            Pedir3=pedir_datos3();
+            Procesar=procesarDatos(Pedir,Pedir2,Pedir3);
+            Mostrar=MostrarResultado(Procesar,Pedir,Pedir2,Pedir3);
+        </script>
+    </body>
+</html>

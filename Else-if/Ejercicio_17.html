@@ -1,0 +1,57 @@
+<html>
+    <body>
+        <script>
+            const LIMITE_PESO = 500; 
+            const TEMP_MIN = 18;      
+            const TEMP_MAX = 25;      
+
+
+            function iniciarPrograma() {
+                const peso = solicitarPeso();
+                const temperatura = solicitarTemperatura();
+
+                if (verificarTemperatura(temperatura)) {
+                    moverAscensor(peso);
+                } else {
+                    console.log("La temperatura no es adecuada. No se permite el movimiento del ascensor.");
+                }
+            }
+
+            function solicitarPeso() {
+                const peso = parseFloat(prompt("Ingrese su peso en kg:"));
+                return peso;
+            }
+
+
+            function solicitarTemperatura() {
+                const temperatura = parseFloat(prompt("Ingrese la temperatura actual en °C:"));
+                return temperatura;
+            }
+
+        
+            function verificarTemperatura(temperatura) {
+                return temperatura >= TEMP_MIN && temperatura <= TEMP_MAX;
+            }
+
+            function moverAscensor(peso) {
+                if (verificarPeso(peso)) {
+                    const piso = solicitarPiso();
+                    console.log(`El ascensor se está moviendo al piso ${piso}.`);
+                } else {
+                    console.log("El ascensor está sobrecargado. Reduzca su peso.");
+                }
+            }
+
+            function verificarPeso(peso) {
+                return peso <= LIMITE_PESO;
+            }
+
+            function solicitarPiso() {
+                const piso = parseInt(prompt("Ingrese el piso al que desea ir:"));
+                return piso;
+            }
+
+            iniciarPrograma();
+        </script>
+    </body>
+</html>

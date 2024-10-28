@@ -1,0 +1,26 @@
+<html>
+    <body>
+        <script>
+            function pedir_datos(){
+                let numero = parseInt(prompt("Ingrese el piso al que desea ir (0-10):"));
+                return numero;
+            }
+
+
+            function procesarDatos(Valor){
+                return Valor >= 0 && Valor <= 10;
+            }
+
+            function MostrarResultado(Resultado,Valor){   
+                if (Resultado) {
+                    console.log("en camino al piso "+Valor);
+                } else {
+                    console.log("Error: Piso inválido. Por favor, ingrese un piso entre 0 y 10.");
+                }
+            }
+            Pedir=pedir_datos();
+            Procesar=procesarDatos(Pedir);
+            Mostrar=MostrarResultado(Procesar,Pedir);
+        </script>
+    </body>
+</html>

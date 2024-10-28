@@ -1,0 +1,23 @@
+<html>
+    <body>
+        <script>
+            // Solicitar al usuario el número para la tabla de multiplicar
+var numero = prompt("Introduce un número del 1 al 10 para mostrar su tabla de multiplicar:");
+
+// Convertir el input a un número
+numero = parseInt(numero);
+
+// Verificar si el número es válido
+if (numero < 1 || numero > 10) {
+    console.log("Por favor, introduce un número válido del 1 al 10.");
+} else {
+    // Mostrar la tabla de multiplicar
+    for (var i = 1; i <= 10; i++) {
+        var resultado = numero * i;
+        console.log(numero + " x " + i + " = " + resultado);
+    }
+}
+
+        </script>
+    </body>
+</html>
