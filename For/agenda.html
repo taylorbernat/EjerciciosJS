@@ -1,0 +1,32 @@
+<html>
+    <body>
+        <script> 
+        
+          var numContactos = prompt("¿Cuántos contactos desea agregar a la agenda?");
+          var agenda = []; 
+          
+          
+          for (var i = 0; i < numContactos; i++) {
+            
+            var nombre = prompt("Ingrese el nombre del contacto " + (i + 1) + ":");
+            
+            
+            var telefono = prompt("Ingrese el número de teléfono de " + nombre + ":");
+            
+            
+            agenda[i] = {
+              nombre: nombre,
+              telefono: telefono
+            };
+          }
+          
+          
+          console.log("Lista de contactos registrados:");
+          for (var j = 0; j < agenda.length; j++) {
+            console.log("Contacto " + (j + 1) + ": " + agenda[j].nombre + " - Teléfono: " + agenda[j].telefono);
+          }
+          
+            
+        </script>
+    </body>
+</html>

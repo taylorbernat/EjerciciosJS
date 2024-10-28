@@ -1,0 +1,34 @@
+<html>
+    <body>
+        <script>
+        
+            var numVehiculos = prompt("Ingrese el numero de vehiculos que ingresaran al parqueadero:");
+            var vehiculos = []; 
+            
+            
+            for (var i = 0; i < numVehiculos; i++) {
+              
+              var placa = prompt("Ingrese la placa del vehiculo " + (i + 1) + ":");
+            
+              
+              var horaIngreso = "Hora aproximada: " + (10 + i) + ":00"; 
+            
+              
+              vehiculos[i] = {
+                placa: placa,
+                horaIngreso: horaIngreso
+              };
+            }
+            
+            
+            console.log("Resumen de vehiculos registrados en el parqueadero:");
+            for (var j = 0; j < vehiculos.length; j++) {
+              console.log("Vehiculo " + (j + 1) + ":");
+              console.log("  Placa: " + vehiculos[j].placa);
+              console.log("  Hora de ingreso: " + vehiculos[j].horaIngreso);
+            }
+            
+
+        </script>
+    </body>
+</html>

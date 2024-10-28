@@ -1,0 +1,39 @@
+<html>
+    <body>
+        <script>
+        
+            var numProductos = prompt("¿Cuántos productos desea agregar a su carrito?");
+            var carrito = []; 
+            var totalCompra = 0; 
+            
+            
+            for (var i = 0; i < numProductos; i++) {
+              
+              var nombreProducto = prompt("Ingrese el nombre del producto " + (i + 1) + ":");
+              
+              
+              var precioProducto = prompt("Ingrese el precio de " + nombreProducto + ":");
+              
+             
+              precioProducto = parseFloat(precioProducto);
+            
+              
+              carrito[i] = {
+                nombre: nombreProducto,
+                precio: precioProducto
+              };
+            
+              
+              totalCompra += precioProducto;
+            }
+            
+            
+            console.log("Resumen de la compra:");
+            for (var j = 0; j < carrito.length; j++) {
+              console.log("Producto " + (j + 1) + ": " + carrito[j].nombre + " - $" + carrito[j].precio);
+            }
+            console.log("Total de la compra: $" + totalCompra);
+            
+        </script>
+    </body>
+</html>
